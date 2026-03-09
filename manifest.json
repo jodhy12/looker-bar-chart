@@ -7,7 +7,7 @@
   "supportUrl": "https://example.com/support",
   "privacyPolicyUrl": "https://example.com/privacy",
   "termsOfServiceUrl": "https://example.com/terms",
-  "packageUrl": "YOUR_HOSTING_URL/visualization.js",
+  "packageUrl": "https://jodhy12.github.io/looker-bar-chart/visualization.js",
   "devMode": true,
   "components": [
     {
@@ -16,9 +16,9 @@
       "description": "A stacked bar chart that supports unlimited series with D3.js",
       "iconUrl": "https://via.placeholder.com/150",
       "resource": {
-        "js": "YOUR_HOSTING_URL/visualization.js",
-        "config": "YOUR_HOSTING_URL/visualization.js",
-        "css": "YOUR_HOSTING_URL/styles.css"
+        "js": "https://jodhy12.github.io/looker-bar-chart/visualization.js",
+        "config": "https://jodhy12.github.io/looker-bar-chart/visualization.js",
+        "css": "https://jodhy12.github.io/looker-bar-chart/styles.css"
       }
     }
   ]
