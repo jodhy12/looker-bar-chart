@@ -17,7 +17,7 @@
       "iconUrl": "https://via.placeholder.com/150",
       "resource": {
         "js": "https://jodhy12.github.io/looker-bar-chart/visualization.js",
-        "config": "https://jodhy12.github.io/looker-bar-chart/visualization.js",
+        "config": "https://jodhy12.github.io/looker-bar-chart/config.json",
         "css": "https://jodhy12.github.io/looker-bar-chart/styles.css"
       }
     }

@@ -1,0 +1,145 @@
+{
+  "data": [
+    {
+      "id": "dimensions",
+      "label": "Dimension",
+      "elements": [
+        {
+          "id": "category",
+          "label": "Category",
+          "type": "DIMENSION",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "metrics",
+      "label": "Metrics (Series)",
+      "elements": [
+        {
+          "id": "values",
+          "label": "Values",
+          "type": "METRIC",
+          "options": {
+            "min": 1,
+            "max": 1000
+          }
+        }
+      ]
+    }
+  ],
+  "style": [
+    {
+      "id": "orientation",
+      "label": "Orientation",
+      "elements": [
+        {
+          "id": "chartOrientation",
+          "label": "Chart Orientation",
+          "type": "SELECT_SINGLE",
+          "options": [
+            { "label": "Vertical", "value": "vertical" },
+            { "label": "Horizontal", "value": "horizontal" }
+          ],
+          "defaultValue": "vertical"
+        }
+      ]
+    },
+    {
+      "id": "colors",
+      "label": "Colors",
+      "elements": [
+        {
+          "id": "colorScheme",
+          "label": "Color Scheme",
+          "type": "SELECT_SINGLE",
+          "options": [
+            { "label": "Auto (Generated)", "value": "auto" },
+            { "label": "Custom", "value": "custom" }
+          ],
+          "defaultValue": "auto"
+        }
+      ]
+    },
+    {
+      "id": "axes",
+      "label": "Axes",
+      "elements": [
+        {
+          "id": "showAxisLabels",
+          "label": "Show Axis Labels",
+          "type": "CHECKBOX",
+          "defaultValue": true
+        },
+        {
+          "id": "axisLabelFontSize",
+          "label": "Axis Label Font Size",
+          "type": "FONT_SIZE",
+          "defaultValue": "12px"
+        }
+      ]
+    },
+    {
+      "id": "legend",
+      "label": "Legend",
+      "elements": [
+        {
+          "id": "showLegend",
+          "label": "Show Legend",
+          "type": "CHECKBOX",
+          "defaultValue": true
+        },
+        {
+          "id": "legendPosition",
+          "label": "Legend Position",
+          "type": "SELECT_SINGLE",
+          "options": [
+            { "label": "Right", "value": "right" },
+            { "label": "Bottom", "value": "bottom" },
+            { "label": "Top", "value": "top" }
+          ],
+          "defaultValue": "right"
+        },
+        {
+          "id": "legendMaxHeight",
+          "label": "Legend Max Height (px)",
+          "type": "TEXTINPUT",
+          "defaultValue": "300"
+        }
+      ]
+    },
+    {
+      "id": "chart",
+      "label": "Chart",
+      "elements": [
+        {
+          "id": "barPadding",
+          "label": "Bar Padding",
+          "type": "SLIDER",
+          "defaultValue": 0.1,
+          "options": {
+            "min": 0,
+            "max": 0.5,
+            "step": 0.05
+          }
+        },
+        {
+          "id": "showValues",
+          "label": "Show Values on Bars",
+          "type": "CHECKBOX",
+          "defaultValue": false
+        }
+      ]
+    }
+  ],
+  "interactions": [
+    {
+      "id": "onClick",
+      "label": "Interaction",
+      "type": "INTERACTION"
+    }
+  ]
+}
