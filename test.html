@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacked Bar Chart - Local Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@google/dscc@latest/dist/index.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        #container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        // Mock dscc for local testing
+        if (typeof dscc === 'undefined') {
+            window.dscc = {
+                subscribeToData: function (callback, options) {
+                    // Mock data for testing
+                    const mockData = {
+                        tables: {
+                            DEFAULT: [
+                                { category: 'Jan', metric1: 100, metric2: 150, metric3: 80, metric4: 120, metric5: 90 },
+                                { category: 'Feb', metric1: 120, metric2: 160, metric3: 95, metric4: 110, metric5: 100 },
+                                { category: 'Mar', metric1: 140, metric2: 180, metric3: 110, metric4: 130, metric5: 85 },
+                                { category: 'Apr', metric1: 110, metric2: 170, metric3: 100, metric4: 140, metric5: 95 },
+                                { category: 'May', metric1: 130, metric2: 190, metric3: 120, metric4: 150, metric5: 110 },
+                                { category: 'Jun', metric1: 150, metric2: 200, metric3: 130, metric4: 160, metric5: 120 }
+                            ]
+                        },
+                        fields: {
+                            category: [{ id: 'category', name: 'Month' }],
+                            values: [
+                                { id: 'metric1', name: 'Product A' },
+                                { id: 'metric2', name: 'Product B' },
+                                { id: 'metric3', name: 'Product C' },
+                                { id: 'metric4', name: 'Product D' },
+                                { id: 'metric5', name: 'Product E' }
+                            ]
+                        },
+                        style: {
+                            chartOrientation: 'vertical',
+                            showLegend: true,
+                            legendPosition: 'right',
+                            showAxisLabels: true,
+                            barPadding: 0.1,
+                            showValues: false,
+                            colorScheme: 'auto',
+                            legendMaxHeight: 300,
+                            axisLabelFontSize: '12px'
+                        }
+                    };
+
+                    // Call the callback with mock data
+                    setTimeout(() => callback(mockData), 100);
+                },
+                objectTransform: data => data
+            };
+        }
+    </script>
+
+    <script src="visualization.js"></script>
+</body>
+
+</html>
