@@ -1,32 +1,38 @@
 {
   "data": [
     {
-      "id": "dimensions",
-      "label": "Dimension",
+      "id": "xAxisData",
+      "label": "X-Axis (Date)",
       "elements": [
         {
-          "id": "category",
-          "label": "Category",
+          "id": "xDimension",
+          "label": "Date",
           "type": "DIMENSION",
-          "options": {
-            "min": 1,
-            "max": 1
-          }
+          "options": { "min": 1, "max": 1 }
         }
       ]
     },
     {
-      "id": "metrics",
-      "label": "Metrics (Series)",
+      "id": "breakdownData",
+      "label": "Breakdown (Resource Name)",
       "elements": [
         {
-          "id": "values",
-          "label": "Values",
+          "id": "breakdownDimension",
+          "label": "Resource Name",
+          "type": "DIMENSION",
+          "options": { "min": 0, "max": 1 }
+        }
+      ]
+    },
+    {
+      "id": "metricData",
+      "label": "Y-Axis (Cost)",
+      "elements": [
+        {
+          "id": "metricValue",
+          "label": "Cost",
           "type": "METRIC",
-          "options": {
-            "min": 1,
-            "max": 1000
-          }
+          "options": { "min": 1, "max": 1 }
         }
       ]
     }
@@ -49,22 +55,6 @@
       ]
     },
     {
-      "id": "colors",
-      "label": "Colors",
-      "elements": [
-        {
-          "id": "colorScheme",
-          "label": "Color Scheme",
-          "type": "SELECT_SINGLE",
-          "options": [
-            { "label": "Auto (Generated)", "value": "auto" },
-            { "label": "Custom", "value": "custom" }
-          ],
-          "defaultValue": "auto"
-        }
-      ]
-    },
-    {
       "id": "axes",
       "label": "Axes",
       "elements": [
@@ -75,10 +65,16 @@
           "defaultValue": true
         },
         {
+          "id": "yAxisCompact",
+          "label": "Compact Y-Axis (K / M / B)",
+          "type": "CHECKBOX",
+          "defaultValue": true
+        },
+        {
           "id": "axisLabelFontSize",
           "label": "Axis Label Font Size",
           "type": "FONT_SIZE",
-          "defaultValue": "12px"
+          "defaultValue": 11
         }
       ]
     },
@@ -117,29 +113,17 @@
       "elements": [
         {
           "id": "barPadding",
-          "label": "Bar Padding",
-          "type": "SLIDER",
-          "defaultValue": 0.1,
-          "options": {
-            "min": 0,
-            "max": 0.5,
-            "step": 0.05
-          }
+          "label": "Bar Padding (0.0 - 0.5)",
+          "type": "TEXTINPUT",
+          "defaultValue": "0.1"
         },
         {
-          "id": "showValues",
-          "label": "Show Values on Bars",
-          "type": "CHECKBOX",
-          "defaultValue": false
+          "id": "currencyPrefix",
+          "label": "Currency Prefix (e.g. Rp, $, €)",
+          "type": "TEXTINPUT",
+          "defaultValue": ""
         }
       ]
-    }
-  ],
-  "interactions": [
-    {
-      "id": "onClick",
-      "label": "Interaction",
-      "type": "INTERACTION"
     }
   ]
 }
